@@ -6,9 +6,15 @@ import { User } from './user.model';
   templateUrl: './address-card.component.html',
   styleUrls: ['./address-card.component.css']
 })
-export class AddressCardComponent implements OnInit{
+export class AddressCardComponent implements OnInit {
   @Input('user') user!: User;
 
+  isCollapsed: boolean = true;
+
   ngOnInit() {
-    };
+  };
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
   }
+}
